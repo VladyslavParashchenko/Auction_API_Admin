@@ -24,7 +24,7 @@
 
 class Order < ApplicationRecord
   belongs_to :bid
-  has_one :lot, through: :bid
+  has_one :lot, through: :bid, dependent: :nullify
   has_one :user, through: :bid
   enum status: { pending: 0, sent: 1, delivered: 2 }
   enum arrival_type: { pickup: 0, delivery_company: 1 }

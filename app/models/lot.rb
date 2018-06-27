@@ -31,7 +31,7 @@
 class Lot < ApplicationRecord
   belongs_to :user
   has_many :bids, dependent: :destroy
-  has_one :order, through: :bids
+  has_one :order, through: :bids, dependent: :destroy
   enum status: { pending: 0, in_process: 1, closed: 2 }
   validates :title, presence: true
   validates :current_price, presence: true, numericality: { greater_than: 0 }

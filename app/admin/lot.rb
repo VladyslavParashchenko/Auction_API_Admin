@@ -1,6 +1,6 @@
 ActiveAdmin.register Lot do
   config.filters = false
-  actions :index, :show
+  actions :index, :show, :destroy
   menu priority: 1, label: proc {I18n.t("lots")}
   scope :all, :default => true
   scope :pending

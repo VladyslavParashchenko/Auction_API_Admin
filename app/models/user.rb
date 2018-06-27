@@ -41,7 +41,7 @@
 
 class User < ApplicationRecord
   has_many :bids
-  has_many :lots, dependent: :destroy
+  has_many :lots
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone, presence: true
